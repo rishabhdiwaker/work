@@ -1,7 +1,6 @@
 // Access token received from the authentication API call
 const accessToken = 'dGVzdEBzdW5iYXNlZGF0YS5jb206VGVzdEAxMjM=';
 
-// API endpoint for getting customer list
 const apiUrl = 'https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp?cmd=get_customer_list';
 
 
@@ -11,7 +10,6 @@ submitButton.addEventListener("click" ,function() {
   window.location.href = 'customerdetails.html';
 });
 
-// Fetch GET request to the API
 fetch(apiUrl, {
   method: 'GET',
   headers: {
@@ -20,7 +18,6 @@ fetch(apiUrl, {
 })
   .then(response => response.json())
   .then(data => {
-    // Process the response and populate the table
     const tableBody = document.querySelector('#customer-table tbody');
     data.forEach(customer => {
       const row = document.createElement('tr');
@@ -87,8 +84,6 @@ function editCustomer(button) {
     const state = dialog.querySelector('input[name="state"]').value;
     const email = dialog.querySelector('input[name="email"]').value;
     const phone = dialog.querySelector('input[name="phone"]').value;
-
-    // Refresh the page
     location.reload();
   });
 }

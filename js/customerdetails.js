@@ -23,7 +23,6 @@ const createCustomer = async () => {
   });
 
   if (response.status === 201) {
-    // Redirect to the customer list page
     window.location.href = "customerlist.html";
   } else {
     alert("Error creating customer.");
